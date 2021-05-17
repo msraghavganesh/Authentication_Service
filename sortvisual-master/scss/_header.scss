@@ -1,0 +1,151 @@
+$blackColor: rgb(34, 34, 34);
+
+header {
+  height: 12vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $blackColor;
+  color: white;
+  user-select: none;
+
+  #github-repo-link {
+    background: white;
+    margin-top: -70px;
+    margin-left: -70px;
+    padding: 50px 70px 0px 70px;
+    transform: rotate(-40deg);
+
+    img {
+      height: 30px;
+    }
+  }
+
+  #logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: default;
+    }
+  }
+
+  #controls {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+
+    #speed-controls-container,
+    #size-controls-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input.slider {
+        -webkit-appearance: none;
+        background: transparent;
+        margin-top: 0.75rem;
+        background-color: rgb(95, 95, 95);
+        height: 4px;
+        border-radius: 5px;
+        outline: none;
+        width: 95%;
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: 2px solid #979797;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          background: #ffffff;
+          cursor: pointer;
+          box-shadow: 0 0 4px 2px rgba(48, 48, 48, 0.3);
+          transition: filter 150ms ease-in-out;
+
+          &:hover {
+            filter: brightness(.85);
+          }
+        }
+      }
+    }
+  }
+
+  #options {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 2;
+
+    span {
+      cursor: pointer;
+      padding: 5px;
+    }
+  }
+
+  #new-array-button {
+    flex: 0.6;
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      background: rgb(26, 133, 5);
+      border: none;
+      padding: 13px 10px;
+      color: white;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
+
+// responsiveness goes here :)
+@media only screen and (max-width: 768px) {
+  header {
+    #logo {
+      span {
+        font-size: 16px;
+      }
+    }
+
+    #controls {
+      span {
+        font-size: 12px;
+      }
+
+      #speed-controls-container,
+      #size-controls-container {
+        input.slider {
+          width: 80%;
+
+          &::-webkit-slider-thumb {
+            height: 0.625rem;
+            width: 0.625rem;
+            border: 1px solid #979797;
+          }
+        }
+      }
+    }
+
+    #options {
+      span {
+        font-size: 13px;
+      }
+    }
+
+    #new-array-button {
+      button {
+        font-size: 8px;
+        padding: 10px 4px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
